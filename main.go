@@ -27,13 +27,15 @@ func getEnv(key, fallback string) string {
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 	// Write this clever message to w, which implements
 	// the Writer interface https://golang.org/pkg/io/#Writer
-	fmt.Fprintf(w, "Hellow MGT656/660 FTW!@$#")
+	fmt.Fprintf(w, "agreeable-salamander")
 }
-
+//agreeable-salamander
 func main() {
 	// Say that when we receive a request for the '/' (or "root") URL
 	// we want the function `indexHandler` to handle it.
 	http.HandleFunc("/", indexHandler)
+	http.HandleFunc("/agreeable-salamander", indexHandler)
+
 
 	// Start listening for HTTP requests.
 	http.ListenAndServe(":"+getEnv("PORT", "8080"), nil)
